@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: tara
+      POSTGRES_PASSWORD: tara
+      POSTGRES_DB: tara
+    volumes:
+      - tara_pg_data:/var/lib/postgresql/data
+
+volumes:
+  tara_pg_data:

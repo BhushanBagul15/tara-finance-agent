@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Transaction {
+  id                String   @id
+  date              DateTime @db.Date
+  merchant          String
+  canonicalMerchant String   @map("canonical_merchant")
+  category          String
+  amount            Decimal  @db.Decimal(14, 2)
+  currency          String
+  memo              String?
+
+  @@index([date])
+  @@index([category])
+  @@index([canonicalMerchant])
+  @@index([merchant])
+  @@index([date, category])
+  @@map("transactions")
+}
+
+model Fund {
+  id       String     @id
+  name     String
+  category String
+  navs     FundNav[]
+  holdings Holding[]
+
+  @@index([name])
+  @@map("funds")
+}
+
+model FundNav {
+  id      String   @id @default(cuid())
+  fundId  String   @map("fund_id")
+  navDate DateTime @map("nav_date") @db.Date
+  nav     Decimal  @db.Decimal(14, 4)
+
+  fund Fund @relation(fields: [fundId], references: [id], onDelete: Cascade)
+
+  @@unique([fundId, navDate])
+  @@index([fundId, navDate])
+  @@index([navDate])
+  @@map("fund_navs")
+}
+
+model Holding {
+  id           String   @id @default(cuid())
+  fundId       String   @map("fund_id")
+  units        Decimal  @db.Decimal(14, 4)
+  purchaseDate DateTime @map("purchase_date") @db.Date
+  purchaseNav  Decimal  @map("purchase_nav") @db.Decimal(14, 4)
+
+  fund Fund @relation(fields: [fundId], references: [id], onDelete: Cascade)
+
+  @@index([fundId])
+  @@map("holdings")
+}
