@@ -2,6 +2,9 @@
 
 Tara is a production-oriented finance assistant that answers natural-language questions **only** from PostgreSQL-backed tools. All monetary figures come from database queries — never from model estimation.
 
+ <img width="1918" height="1017" alt="image" src="https://github.com/user-attachments/assets/f12d9d21-ad71-4441-a486-c9bd8a26b405" />
+
+
 ## Architecture
 
 ```mermaid
