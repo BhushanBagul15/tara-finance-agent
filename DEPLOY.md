@@ -33,7 +33,7 @@ git push
 | **Region** | Singapore (near your Neon `ap-southeast-1` DB) |
 | **Branch** | `main` |
 | **Runtime** | Node |
-| **Build Command** | `npm install && npm run render-build` |
+| **Build Command** | `npm install --include=dev && npm run render-build` |
 | **Start Command** | `npm start` |
 | **Plan** | Free (or Starter for always-on) |
 
@@ -62,7 +62,8 @@ Click **Save Changes**.
 
 Render will build and deploy. Watch **Logs**:
 
-- Build should end with Prisma migrations applied
+- Build should compile TypeScript successfully
+- On start, Prisma runs `migrate deploy` automatically
 - Start should show `Tara API listening`
 
 Open: `https://tara-finance-agent.onrender.com/health`  

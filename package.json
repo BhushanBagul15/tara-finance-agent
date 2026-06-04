@@ -8,9 +8,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc",
-    "render-build": "prisma generate && npm run build && prisma migrate deploy",
-    "start": "node dist/src/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "render-build": "prisma generate && npm run build",
+    "start": "prisma migrate deploy && node dist/src/index.js",
     "ingest:prod": "node dist/scripts/ingest.js",
     "dev": "tsx watch src/index.ts",
     "db:generate": "prisma generate",
