@@ -2,7 +2,11 @@
 
 Tara is a production-oriented finance assistant that answers natural-language questions **only** from PostgreSQL-backed tools. All monetary figures come from database queries — never from model estimation.
 
+Live link : https://tara-finance-agent.onrender.com/ask
+
  <img width="1918" height="1017" alt="image" src="https://github.com/user-attachments/assets/f12d9d21-ad71-4441-a486-c9bd8a26b405" />
+
+ <img width="1482" height="761" alt="Screenshot 2026-06-05 004333" src="https://github.com/user-attachments/assets/1133c1ef-c5a2-495e-8133-cd14ca812f98" />
 
 
 ## Architecture
