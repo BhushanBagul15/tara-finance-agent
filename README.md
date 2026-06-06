@@ -8,6 +8,7 @@ Live link : https://tara-finance-agent.onrender.com/ask
 
  <img width="1482" height="761" alt="Screenshot 2026-06-05 004333" src="https://github.com/user-attachments/assets/1133c1ef-c5a2-495e-8133-cd14ca812f98" />
 
+ <img width="1918" height="1023" alt="image" src="https://github.com/user-attachments/assets/882cacac-2043-49fc-be11-595694b873ab" />
 
 ## Architecture
 
